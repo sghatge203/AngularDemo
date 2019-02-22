@@ -1,0 +1,16 @@
+.img-height{
+  height: 50px;
+}
+.container-fluid{
+  margin-top: 3rem;
+}
+.card{
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.mb-2{
+  margin-bottom: 2rem;
+}
+.title{
+  color:#007bff
+}

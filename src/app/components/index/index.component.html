@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3><strong>USERS</strong> </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Sr.No</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Website</th>
+              <th class="text-center" scope="col">Albums</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users; index as i">
+              <th scope="row">{{ i + 1 }}</th>
+              <td><span class="username" title="View Details" (click)="viewDetails(content,user.id)">{{ user.name }}
+                </span> </td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.phone }}</td>
+              <td> <a href="http://www.{{user.website}}" title="View Website" target="target_blank">{{ user.website }} </a></td>
+              <td class="text-center">
+                <i title="View Albums" class="fa fa-eye username" (click)="viewAlbums(user.id,user.name)"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card" *ngFor="let key of usersCompany">
+          <div class="card-header text-center"><strong>Company Details</strong> </div>
+          <div class="card-body">
+            <div class="col-md-12">
+              <label><strong>Name : </strong> <span>{{key.name}}</span> </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card" *ngFor="let key of usersAddress">
+          <div class="card-header text-center"><strong>Address</strong> </div>
+          <div class="card-body">
+            <div class="col-md-12"><label><strong>Suite:</strong> <span> {{key.suite}}</span></label></div>
+            <div class="col-md-12"><label> <strong>Street:</strong> <span> {{key.street}}</span></label></div>
+            <div class="col-md-12"><label> <strong>City:</strong> <span> {{key.city}}</span></label></div>
+            <div class="col-md-12"><label> <strong>Zip:</strong> <span> {{key.zipcode}}</span></label></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
