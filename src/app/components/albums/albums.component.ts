@@ -45,7 +45,7 @@ export class AlbumsComponent implements OnInit {
         }
       },
       error => {
-
+        console.log(error)
       }
     )
   }

@@ -1,24 +1,24 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12 text-center">
-          <h3><strong><span class="title">{{userName | titlecase}}</span>  ALBUM'S</strong> </h3>
-        </div>
-      </div>
-    <div class="row mb-2">
-        <div class="col-md-12">
-            <button class="btn btn-primary" type="button" (click)="back()"><i class="fa fa-arrow-left"></i>  Back</button>
-          </div>
-      </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3><strong><span class="title">{{userName | titlecase}}</span> ALBUM'S</strong> </h3>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <div class="col-md-12">
+      <button class="btn btn-primary" type="button" (click)="back()"><i class="fa fa-arrow-left"></i> Back</button>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-3" *ngFor="let albums of userAlbums">
       <div class="card" (click)="viewPhotos(albums.userId,albums.title)">
         <div class="card-body">
           <div class="row">
             <div class="col-md-4">
-            <i class="fa fa-images icon"></i>
+              <i class="fa fa-images icon"></i>
             </div>
             <div class="col-md-8">
-                <span class="link">{{ albums.title | titlecase}}</span>
+              <span class="link">{{ albums.title | titlecase}}</span>
             </div>
           </div>
         </div>

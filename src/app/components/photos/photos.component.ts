@@ -48,7 +48,7 @@ export class PhotosComponent implements OnInit {
         }
       },
       error => {
-
+        console.log(error)
       }
     )
   }
